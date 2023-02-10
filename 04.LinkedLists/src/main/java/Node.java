@@ -3,9 +3,9 @@ public class Node {
    Node next;   // This is the address of the next node stored in my current node
 
 
-    public Node (int id, Node next) {  //If we want to use this node and these fields we need a constructor.
+    public Node (int id) {  //If we want to use this node and these fields we need a constructor.
         this.id = id;
-        this.next = next;
+
     }
 }
 
