@@ -81,6 +81,31 @@ public class MySinglyLinkedList {
              }
 }
 
+/*-----Delete Method----------------------------------------------------------------------------------------------------
+1-Check if the List is Empty
+2-If it is not empty assign prev and current with the head-This way I go to the beginning of the list
+3-As long as current which is the head NOT nul will do the iteration with a while loop to check if the argument id is
+  matching any of the nodes' id.
+4-If there is a match, we need to handle 3 cases:Matched id is in Head/Tail/In the middle
+  ----If the node to be deleted is Head----
+  head=current.next;
+  current.next=null;
+  ----If the node to be deleted is Tail----
+  tail=prev;
+  prev.next=null;
+  ----If the node to be deleted is Middle-----
+  If it is not Head or Tail it will be in the middle. This is how we find if it is in the middle
+   prev.next=current.next;       -Makes the link from previous which is present current to current's next
+   current.next=null;            -Will break the link of the present current and will be elligible for GC
+5-After deletion decrease the size
+   size--;
+6-If there is no match or even there is a match there might be other items with the same id then we have to move forward
+  to the other elements of the list/iterate until I come to the end / the current is null
+  prev=current;                   -Assign current to previous       - This will keep the previous value
+  current=current.next;           -Assign current.next to current   - This will make me jump to the next node
+
+*/
+
 //---------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------
 
