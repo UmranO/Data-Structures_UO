@@ -27,7 +27,16 @@ public class MySinglyLinkedList {
         }
     }
 
+    void printNodes(){                                               //to print the nodes we made printNodes()
 
+        Node current=head;                                           //Assigned head to current
+
+        while (current!=null){                                       //As long as current which is the head NOT null
+
+            if (current.next==null){System.out.print(current.id+"=>null");}
+            else{System.out.print(current.id+"=>");}
+            current=current.next;                                   // Bunu loop'un icine yazarsan sonsuz loop oluyor.
+        }
     }
 
-
+}
