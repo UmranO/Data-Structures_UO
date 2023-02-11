@@ -1,15 +1,16 @@
-import java.util.ArrayList;
-
 public class MySinglyLinkedList {
 
     Node head;
     Node tail;
     int size;
 
+//----isEmpty Method----------------------------------------------------------------------------------------------------
+
     boolean isEmpty() {       //if head is null then it'll return true which means we don't have any elem.in the Singly Linked List
         return head == null;
     }
-//----------------------------------------------------------------------------------------------------------------------
+//----Add Method--------------------------------------------------------------------------------------------------------
+
     void add(int data) {                  //We are sending an integer value
         Node node = new Node(data);       //Created a new node object from the sent int data
 
@@ -26,21 +27,21 @@ public class MySinglyLinkedList {
             size++;
         }
     }
-//----------------------------------------------------------------------------------------------------------------------
+//----PrintNodes Method------------------------------------------------------------------------------------------------
     void printNodes(){                                               //to print the nodes we made printNodes()
 
         Node current=head;                                           //Assigned head to current
 
         while (current!=null){                                       //As long as current which is the head NOT null
 
-            if (current.next==null){System.out.println(current.id+"=>null");}
-            else{System.out.print(current.id+"=>");}
+            if (current.next==null){System.out.println(current.id+" =>null");}
+            else{System.out.print(current.id+" =>");}
             current=current.next;                                   // Bunu loop'un icine yazarsan sonsuz loop oluyor.
         }
     }
 
              //I start from the beginning and iterate to the end so Big O Notation of this runtime complexity() is O(n)
-             //-----Delete Method------------------------------------------------------------------------------------------------
+//----Delete Method------------------------------------------------------------------------------------------------
              void deletyeById(int id) {
                  //1-check if the list is empty
                  if(isEmpty()) System.out.println("List is empty!!");
