@@ -12,6 +12,13 @@ public class SinglyLinkedListApp {
         }
         myList.printNodes();                                  //to check if they are added correctly called printNodes()
 
+        myList.deletyeById(7);
+        myList.printNodes();
 
+        myList.deletyeById(0);
+        myList.printNodes();
+
+        myList.deletyeById(9);
+        myList.printNodes();
     }
 }
