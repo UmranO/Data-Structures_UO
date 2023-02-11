@@ -9,7 +9,7 @@ public class MySinglyLinkedList {
     boolean isEmpty() {       //if head is null then it'll return true which means we don't have any elem.in the Singly Linked List
         return head == null;
     }
-
+//----------------------------------------------------------------------------------------------------------------------
     void add(int data) {                  //We are sending an integer value
         Node node = new Node(data);       //Created a new node object from the sent int data
 
@@ -26,7 +26,7 @@ public class MySinglyLinkedList {
             size++;
         }
     }
-
+//----------------------------------------------------------------------------------------------------------------------
     void printNodes(){                                               //to print the nodes we made printNodes()
 
         Node current=head;                                           //Assigned head to current
@@ -38,5 +38,13 @@ public class MySinglyLinkedList {
             current=current.next;                                   // Bunu loop'un icine yazarsan sonsuz loop oluyor.
         }
     }
+
+             //I start from the beginning and iterate to the end so Big O Notation of this runtime complexity() is O(n)
+//--------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+
 
 }
