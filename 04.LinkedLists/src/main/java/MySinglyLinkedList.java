@@ -33,18 +33,54 @@ public class MySinglyLinkedList {
 
         while (current!=null){                                       //As long as current which is the head NOT null
 
-            if (current.next==null){System.out.print(current.id+"=>null");}
+            if (current.next==null){System.out.println(current.id+"=>null");}
             else{System.out.print(current.id+"=>");}
             current=current.next;                                   // Bunu loop'un icine yazarsan sonsuz loop oluyor.
         }
     }
 
              //I start from the beginning and iterate to the end so Big O Notation of this runtime complexity() is O(n)
-//--------------------------------------------------------------------------------------------------------------------
+             //-----Delete Method------------------------------------------------------------------------------------------------
+             void deletyeById(int id) {
+                 //1-check if the list is empty
+                 if(isEmpty()) System.out.println("List is empty!!");
 
-//---------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------------------------------------
+                 //2-If it is not empty I reset my pointers to the beginning of the list.
+                 //Assign prev and current with the head-This way I go to the beginning of the list
 
+                 Node prev=head;
+                 Node current=head;
 
+                 while (current!=null) {                          //As long as current which is the head NOT nul will do the
+                     //iteration with this while loop
+
+                     if (current.id == id){                       //there is a match, we need to handle 3 cases
+                         // case 1: head
+                         if (head==current){
+                             head=current.next;
+                             current.next=null; }
+                         // case 2: tail
+                         else if (current==tail){
+                             tail=prev;
+                             prev.next=null;                 //Ex-Tail will be eligible for GC
+                         }
+                         // case 3: middle                     if it is not tail or head then it has to be in the middle
+                         else{
+                             prev.next=current.next;
+                             current.next=null;              //Assign null to the current.next so it will be eligible for GC
+
+                         }
+                         //After deletion
+                         size--;                              //After deletion whatever the case is size has to be decreased by 1
+                     }
+                     //if there is no match or there is a match but there can be other items with the same id then we have to
+                     //so move forward to the other elements of the list/iterate until I come to the end / the current is null
+                     prev=current;
+                     current=current.next;
+                 }
+             }
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+
