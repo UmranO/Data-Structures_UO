@@ -27,6 +27,25 @@ public class MySinglyLinkedList {
             size++;
         }
     }
+//----IndexOf Method---------------------------------------------------------------------------------------------------
+    int indexOf(int id){
+        if (isEmpty()) return -1;
+
+        int index=0;
+
+        Node current=head;                                           //set my current with the starting element;
+
+       //iterate through the list and find the matching id
+
+        while(current !=null){
+            if (current.id==id) return index;                       //check if the id matches the param. If yes return
+                                                                    //the index of the element
+             index++;                                               //If not increase the index
+             current=current.next;                                  //jump to the next node
+        }
+        return -1;                                                  //If no match in this loop return -1
+    }
+
 //----PrintNodes Method------------------------------------------------------------------------------------------------
     void printNodes(){                                               //to print the nodes we made printNodes()
 
