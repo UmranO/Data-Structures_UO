@@ -9,8 +9,12 @@ public class SinglyLinkedListApp {
         for (int i = 0; i < 10; i++) {                        //Made a fori loop and added items into the list.
             myList.add(i);
         }
+
+  //---- Test printNodes ()--------------------------------------------------------------------------------------------
+
         myList.printNodes();                                  //to check if they are added correctly called printNodes()
 
+  //---- Test deleteById ()--------------------------------------------------------------------------------------------
         myList.deletyeById(7);
         myList.printNodes();
 
@@ -19,5 +23,9 @@ public class SinglyLinkedListApp {
 
         myList.deletyeById(9);
         myList.printNodes();
+
+  //---- Test indexOf ()----------------------------------------------------------------------------------------
+        System.out.println("index of 5 is " + myList.indexOf(5));
+        System.out.println("index of 1 is " + myList.indexOf(1));
     }
 }
