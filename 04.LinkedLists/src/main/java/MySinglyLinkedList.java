@@ -9,7 +9,8 @@ public class MySinglyLinkedList {
     boolean isEmpty() {       //if head is null then it'll return true which means we don't have any elem.in the Singly Linked List
         return head == null;
     }
-//----Add Method--------------------------------------------------------------------------------------------------------
+//----Add Method-(Adds to the end)--------------------------------------------------------------------------------------
+//Implement a method that makes insertion into the last element of the Linked List
 
     void add(int data) {                  //We are sending an integer value
         Node node = new Node(data);       //Created a new node object from the sent int data
@@ -27,7 +28,28 @@ public class MySinglyLinkedList {
             size++;
         }
     }
-//----IndexOf Method---------------------------------------------------------------------------------------------------
+//----Add First Method-(Adds to the beginning)--------------------------------------------------------------------------
+      //Implement a method that makes insertion into the first element of the Linked List
+
+    void addFirst(int data) {
+
+        Node node=new Node(data);               //Create a new node with the provided int data
+
+       //Case 1:List is empty
+
+        if (isEmpty()){                         //Check is the list is empty  - If yes head and tail and node are same
+          head=tail=node;
+        }
+        //Case 2:List is NOT empty              //If list is not empty new Node should point to Head so node.next=head
+        else {node.next=head;
+        head=node;                              //Set the head with the new node
+        }
+        size++;                                 // increase the size by -Required in both cases
+    }
+
+//----IndexOf Method----------------------------------------------------------------------------------------------------
+      //Finds the indexOf an element and return it. If not found returns -1
+
     int indexOf(int id){
         if (isEmpty()) return -1;
 
