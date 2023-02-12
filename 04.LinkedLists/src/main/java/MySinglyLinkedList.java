@@ -35,7 +35,7 @@ public class MySinglyLinkedList {
         while (current!=null){                                       //As long as current which is the head NOT null
 
             if (current.next==null){System.out.println(current.id+" =>null");}
-            else{System.out.print(current.id+" =>");}
+            else{System.out.print(current.id + " =>");}
             current=current.next;                                   // Bunu loop'un icine yazarsan sonsuz loop oluyor.
         }
     }
@@ -85,7 +85,7 @@ public class MySinglyLinkedList {
 /*-----Delete Method----------------------------------------------------------------------------------------------------
 1-Check if the List is Empty
 2-If it is not empty assign prev and current with the head-This way I go to the beginning of the list
-3-As long as current which is the head NOT nul will do the iteration with a while loop to check if the argument id is
+3-As long as current, which is the head NOT null will do the iteration with a while loop to check if the argument id is
   matching any of the nodes' id.
 4-If there is a match, we need to handle 3 cases:Matched id is in Head/Tail/In the middle
   ----If the node to be deleted is Head----
