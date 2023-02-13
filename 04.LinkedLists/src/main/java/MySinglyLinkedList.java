@@ -51,7 +51,7 @@ public class MySinglyLinkedList {
       //Finds the indexOf an element and return it. If not found returns -1
 
     int indexOf(int id){
-        if (isEmpty()) return -1;
+        if (isEmpty()) return -1;                                   //If list is empty it will return -1
 
         int index=0;
 
