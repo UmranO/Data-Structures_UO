@@ -93,34 +93,37 @@ public class MySinglyLinkedList {
                  Node prev=head;
                  Node current=head;
 
-                 while (current!=null) {                          //As long as current which is the head NOT nul will do the
-                     //iteration with this while loop
+                 while (current!=null) {                      //As long as current which is the head NOT nul will do the
+                                                              //iteration with this while loop
 
-                     if (current.id == id){                       //there is a match, we need to handle 3 cases
+                     if (current.id == id){                   //if there is a match, we need to handle 3 cases
+
                          // case 1: head
                          if (head==current){
                              head=current.next;
                              current.next=null; }
+
                          // case 2: tail
                          else if (current==tail){
                              tail=prev;
-                             prev.next=null;                 //Ex-Tail will be eligible for GC
+                             prev.next=null;              //Ex-Tail will be eligible for GC
                          }
-                         // case 3: middle                     if it is not tail or head then it has to be in the middle
+
+                         // case 3: middle                  if it is not tail or head then it has to be in the middle
                          else{
                              prev.next=current.next;
-                             current.next=null;              //Assign null to the current.next so it will be eligible for GC
+                             current.next=null;          //Assign null to the current.next so it will be eligible for GC
 
                          }
-                         //After deletion
-                         size--;                              //After deletion whatever the case is size has to be decreased by 1
-                     }
-                     //if there is no match or there is a match but there can be other items with the same id then we have to
-                     //so move forward to the other elements of the list/iterate until I come to the end / the current is null
-                     prev=current;
-                     current=current.next;
-                 }
-             }
+                         //After deletion---tum case'ler bittikten sonra
+                         size--;                     //After deletion whatever the case is size has to be decreased by 1
+                     }                               //if there is a match (head/tail or in the middle)
+               //if there is no match or there is a match but there can be other items with the same id so we have to
+               //move forward to the other elements of the list/iterate until I come to the end / the current is null
+                     prev=current;                  //Burada onemli olan ikisi de head'i gosteriyordu ama head degilse
+                     current=current.next;          //bu noktadan sonra previous'i current, current'i de current.next
+                 }                      //yapinca sona kadar pespese devam etmis oluyorlar boylece ve hem oncekini hem
+             }                          //de mevcutu takip edebiliyoruz
 }
 
 /*-----Delete Method----------------------------------------------------------------------------------------------------

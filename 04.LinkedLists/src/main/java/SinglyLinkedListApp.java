@@ -4,24 +4,24 @@ public class SinglyLinkedListApp {
 
     MySinglyLinkedList myList=new MySinglyLinkedList();       //Creating object to test the methods we created in
                                                               // MySinglyLinkedList Class
-  //---- Test isEmpty ()----------------------------------------------------------------------------------------------------
+System.out.println("---- Test isEmpty ()-----------------------------------------------------------------------------");
 
     System.out.println(myList.isEmpty());
 
-  //---- Test add ()----------------------------------------------------------------------------------------------------
+System.out.println("---- Test add ()---------------------------------------------------------------------------------");
 
         for (int i = 0; i < 10; i++) {                        //Made a fori loop and added items into the list.
             myList.add(i);
         }
-  //---- Test addFirst ()-----------------------------------------------------------------------------------------------
+ System.out.println("---- Test addFirst ()---------------------------------------------------------------------------");
 
         myList.addFirst(10);
 
-  //---- Test printNodes ()---------------------------------------------------------------------------------------------
+System.out.println("---- Test printNodes ()---------------------------------------------------------------------------");
 
         myList.printNodes();                                  //to check if they are added correctly called printNodes()
 
-  //---- Test deleteById ()---------------------------------------------------------------------------------------------
+ System.out.println("---- Test deleteById ()--------------------------------------------------------------------------");
 
         myList.deletyeById(7);
         myList.printNodes();
@@ -32,7 +32,7 @@ public class SinglyLinkedListApp {
         myList.deletyeById(9);
         myList.printNodes();
 
-  //---- Test indexOf ()------------------------------------------------------------------------------------------------
+System.out.println("---- Test indexOf ()------------------------------------------------------------------------------");
 
         System.out.println("index of 5 is " + myList.indexOf(5));
         System.out.println("index of 1 is " + myList.indexOf(1));
