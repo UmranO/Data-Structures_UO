@@ -57,6 +57,27 @@ public class PhoneBook {
         }
         return size;
     }
+    //----IndexOf Method----------------------------------------------------------------------------------------------------
+    int indexOf(String email){                         // send an email as a parameter and return the index of it (an int #)
+
+        Node current=head;
+        int index=0;
+        if(isEmpty()){
+            return -1;}
+        else{
+            while (current!=null){
+                if(current.email.equals(email)) {
+                    return index;}     // compare every node's email with the param. email
+
+                index++;                      //in the while loop you need to increase the index after the if statement
+                current=current.next;
+            }
+            return -1;                //if no match in the while loop it means we don't have such an email so return -1
+            //-1 means we don't have such an element-bec. there is not an index value with -1
+        }
+
+    }
 
 
 }
+
