@@ -27,6 +27,19 @@ System.out.println("----Test FindByName ()--------------------------------------
         System.out.println(mylist.findByName("Umran"));
         System.out.println(mylist.findByName("A"));
 
+System.out.println("----Test DeleteByEmail ()----------------------------------------------------------");
+
+        mylist.deleteByEmail("u@yahoo.com");
+
+        System.out.println(mylist.indexOf("u@yahoo.com"));
+
+        System.out.println(mylist.findByName("umran"));
+
+
+
+
+
+
 
     }
 
