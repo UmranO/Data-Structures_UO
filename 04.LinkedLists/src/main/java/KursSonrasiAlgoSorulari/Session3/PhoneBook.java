@@ -79,5 +79,20 @@ public class PhoneBook {
     }
 
 
+//----------------------------------------------------------------------------------------------------------------------
+//We'll create PhoneBook Class & this PhoneBook Class will hold nodes.
+//Inside this Class I need 2 pointers: Head & Tail.
+//int size to measure the length of the linked list
+//we need constructor generate sirasinda select none'i sectik sonra manuallly create ettik
+//in this one we'll say this.size=0 dedik. when we create it will be by default 0 but to be sure
+//public PhoneBook(){
+//  this.size=0;
+//  this.head=null;               Now if you want to put it you can but by default it will be assigned head=tail=null
+//  this.tail=null;               }               Normally it's null but sometimes in other languages the default is not null so in order
+//                               to be on the safe side let's assign it to null. So do it as a routine.
+
+
+
+
 }
 
