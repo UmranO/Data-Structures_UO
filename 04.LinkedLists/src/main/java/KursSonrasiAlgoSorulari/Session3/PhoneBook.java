@@ -35,6 +35,28 @@ public class PhoneBook {
 
         size++;                     //after the if & else part before getting out of the () size should be increased
     }
+    //----Size Method-(Adds to the end)-------------------------------------------------------------------------------------
+    /* if the variable size is given as above the size method is:
+    int size () {return size;}
+    BUT if the int size is not given we have to begin from the head & go through
+    the list and count the entries as below UOS
+    It takes O(n) operation if size variable is given it takes O(1)
+    If we count in every insert or delete operation then we won't need to make a O(n) size type of method bec. if you
+    keep that info you can return it with O(1)
+     */
+    int size(){
+        size=0;
+        Node current;
+        current=head;
+        if (head==null) return size;
+        else {
+            while (current!=null){
+                size++;
+                current=current.next;
+            }
+        }
+        return size;
+    }
 
 
 }
