@@ -93,9 +93,40 @@ public class PhoneBook {
     }
 
 //----DeleteByEmail Method----------------------------------------------------------------------------------------------
-//----SortByName Method-------------------------------------------------------------------------------------------------
-//----DeleteDuplicatedEntry Method--------------------------------------------------------------------------------------
+    void deleteByEmail(String email){
 
+        Node previous=head;
+        Node current=head;
+
+        if(isEmpty()){
+            System.out.println("List is empty");}
+
+        while(current!=null){
+
+            if (current.email.equals(email)){
+
+        // case 1: head
+                if (current==head) {
+                    head=current.next;
+                    current.next=null; }
+
+        // case 2: tail
+            else if(current==tail) {
+                tail=previous;
+                previous.next=null;}
+
+        // case 3: middle
+            else{
+                previous.next=current.next;
+                current.next=null;}
+
+        //After deletion
+            size--;
+            }
+            previous=current;         //Bu noktadan sonra loop'u tamamalyana kadar pespese gidiyorlar
+            current=current.next;
+        }
+    }
 
 
 }
