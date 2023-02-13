@@ -15,6 +15,15 @@ public class Node {
         this.phoneNumber = phoneNumber;
 
     }
+//----ToString Method---------------------------------------------------------------------------------------------------
+    @Override
+    public String toString() {
+        return "{" + name +
+                ", "+ lastName +
+                ", " + email +
+                ", " + phoneNumber +
+                '}';
+    }
 }
 // We created a Node Class & with this Node class we can point to other Node Classes. And we have some Data like name,
 //email.....
