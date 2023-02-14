@@ -139,43 +139,57 @@ public class PhoneBook {
 
 //----SwapData Method-------------------------------------------------------------------------------------------------------
 
-    void swapData(Node node1, Node node2) {
+    void swapData(Node node1, Node node2) {                                   //temp is created with node2's values
 
-        Node temp = new Node(node2.name, node2.lastName, node2.email, node2.phoneNumber); //temp is created with node2's values
+        Node temp = new Node(node2.name, node2.lastName, node2.email, node2.phoneNumber);
 
-        node2.name = node1.name;
-        node2.lastName = node1.lastName;
+        node2.name = node1.name;                    // Since the new node is created with node2's values we assign
+        node2.lastName = node1.lastName;            // node1's values to node2 since we are trying to swap
         node2.email = node1.email;
         node2.phoneNumber = node1.phoneNumber;
 
-        node1.name = temp.name;
+        node1.name = temp.name;                      //Assigning node temp's values(which are = node2's values)to node1
         node1.lastName = temp.lastName;
         node1.email = temp.email;
         node1.phoneNumber = temp.phoneNumber;
 
     }
 
-    //----SortByNameSwap Method swap data olan----------------------------------------------------------------------------------
+    //----SortByNameSwap Method with swapping data ---------------------------------------------------------------------
     void sortByNameSwap() {
+      //if we do like Node current=head, current2=head.next; it has a drawback: if the list is composed of 1 element
+      //then the current2 will be assigned with null & cause trouble. So what we should do is 1st create the current
+      //node and check if there is only 1 node or not. If there is only 1 node you can easily return.If that is not the
+      //issue-list has more than 1 element-then you can continue assigning current2 with current.next & you can continue
+      //moving these pointers together
+
         Node current = head, current2;
 
-        if (current.next != null) {
-            current2 = current.next;
-        } else return;
+        if (current.next != null) {         //if current.next not null it means there are more than 1 element
+            current2 = current.next;        //so we assign current.next to current2 -we'll have 2 pointers
+        } else return;                      //if only 1 element no need to sort
 
-        boolean swap = true;
-
+        boolean swap = true;                //creating a boolean variable swap and 1st value of swap should be true
+                                            //while swap it should continue ordering the list (). true demenin baska
+                                            //yolu olarak kullaniyorum cunku sonra onu false'a cevirecegim
+                                            //in order to enter the while () it should be true.
         while (swap) {
-            swap = false;
-            current = head;
-            current2 = current.next;
-            while (current != null && current2 != null) {
-
-                if (current.name.compareToIgnoreCase(current2.name) > 0) {
-                    swapData(current, current2);
-                    swap = true;
-                }
-                current = current.next;
+            swap = false;                   //1st set swap as false bec swap should only be true when there is a swap
+                                            //if no swap I should check it here
+            current = head;                 //assign pointers-should reset everything here-start from the head
+            current2 = current.next;        //current2 is current next or head.next-Now I am at the beginning but after
+                                            //every iteration if there is a swap I'll come to the while loop and I'll
+                                            //start from the beginning again.Now I begin from the first & the following
+                                            //I need a while loop to do the bubble-up operation.
+            while (current != null && current2 != null) {     // the cases for the while loop to continue
+                                                              //compare the names of current & current2
+            if (current.name.compareToIgnoreCase(current2.name) > 0)  //*if this value>0 it means the 1st elem. is> 2nd
+                                                                  //and we need to swap them eg 1st is b & the 2nd is a
+                    {  swapData(current, current2);          //if 1st bigger then 2nd then we need {} after the if  bec.
+                    swap = true;                             //we'll swap them & also swap needs to be set to true.
+                                                //bec when we swap them swap variable should carry true value.
+                }                               //So we need to make 2 operations if the if statement is correct
+                current = current.next;         //After if statement we'll move the pointers one step further
                 current2 = current2.next;
             }
 
@@ -194,11 +208,6 @@ public class PhoneBook {
         return "PhoneBook{\n"+sb+'}';
     }
 }
-
-
-
-
-
 
 
 
