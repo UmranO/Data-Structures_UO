@@ -137,8 +137,28 @@ public class PhoneBook {
         }
     }
 
+//----SwapData Method-------------------------------------------------------------------------------------------------------
 
+    void swapData(Node node1, Node node2) {
+
+        Node temp = new Node(node2.name, node2.lastName, node2.email, node2.phoneNumber); //temp is created with node2's values
+
+        node2.name = node1.name;
+        node2.lastName = node1.lastName;
+        node2.email = node1.email;
+        node2.phoneNumber = node1.phoneNumber;
+
+        node1.name = temp.name;
+        node1.lastName = temp.lastName;
+        node1.email = temp.email;
+        node1.phoneNumber = temp.phoneNumber;
+
+    }
 }
+
+//----DeleteDuplicatedEntry Method--------------------------------------------------------------------------------------
+
+
 
 //----------------------------------------------------------------------------------------------------------------------
 //We'll create PhoneBook Class & this PhoneBook Class will hold nodes.
