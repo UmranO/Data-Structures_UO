@@ -14,9 +14,10 @@ public class PhoneBook {
 // deleteByEmail(), sortByName(), A () for deleting the duplicated entries
 
     //----isEmpty Method------------------------------------------------------------------------------------------------
-    boolean isEmpty(){
-        return  head==null;
+    boolean isEmpty() {
+        return head == null;
     }
+
     //----Add Method-(Adds to the end)----------------------------------------------------------------------------------
     void insert(String name, String lastName, String email, String phoneNumber) {//we're sending them as parameters &
         // it will create a node inside the method & it will add that node into the linked list
@@ -30,11 +31,12 @@ public class PhoneBook {
         //it's the only node in the list
         else {                       //if this is not the case: if the list is not empty you continue with the else part
             tail.next = node;        //we'll jump into the last one add it after the tail
-            tail=node;               //new node is assigned to the tail. Now new node is the tail
+            tail = node;               //new node is assigned to the tail. Now new node is the tail
         }                            //By default node.next is null
 
         size++;                     //after the if & else part before getting out of the () size should be increased
     }
+
     //----Size Method-(Adds to the end)---------------------------------------------------------------------------------
     /* if the variable size is given as above the size method is:
     int size () {return size;}
@@ -44,40 +46,43 @@ public class PhoneBook {
     If we count in every insert or delete operation then we won't need to make a O(n) size type of method bec. if you
     keep that info you can return it with O(1)
      */
-    int size(){
-        size=0;
+    int size() {
+        size = 0;
         Node current;
-        current=head;
-        if (head==null) return size;
+        current = head;
+        if (head == null) return size;
         else {
-            while (current!=null){
+            while (current != null) {
+                current = current.next;
                 size++;
-                current=current.next;
             }
         }
         return size;
     }
-    //----IndexOf Method------------------------------------------------------------------------------------------------
-    int indexOf(String email){                     // send an email as a parameter and return the index of it (an int #)
 
-        Node current=head;
-        int index=0;
-        if(isEmpty()){
-            return -1;}
-        else{
-            while (current!=null){
-                if(current.email.equals(email)) {
-                    return index;}     // compare every node's email with the param. email
+    //----IndexOf Method------------------------------------------------------------------------------------------------
+    int indexOf(String email) {                     // send an email as a parameter and return the index of it (an int #)
+
+        Node current = head;
+        int index = 0;
+        if (isEmpty()) {
+            return -1;
+        } else {
+            while (current != null) {
+                if (current.email.equals(email)) {
+                    return index;
+                }     // compare every node's email with the param. email
 
                 index++;                      //in the while loop you need to increase the index after the if statement
-                current=current.next;
+                current = current.next;
             }
             return -1;                //if no match in the while loop it means we don't have such an email so return -1
             //-1 means we don't have such an element-bec. there is not an index value with -1
         }
 
     }
-//----FindByName Method-------------------------------------------------------------------------------------------------
+
+    //----FindByName Method-------------------------------------------------------------------------------------------------
     Node findByName(String name) {
         Node current;
         current = head;
@@ -92,39 +97,43 @@ public class PhoneBook {
         return null;
     }
 
-//----DeleteByEmail Method----------------------------------------------------------------------------------------------
-    void deleteByEmail(String email){
+    //----DeleteByEmail Method----------------------------------------------------------------------------------------------
+    void deleteByEmail(String email) {
 
-        Node previous=head;
-        Node current=head;
+        Node previous = head;
+        Node current = head;
 
-        if(isEmpty()){
-            System.out.println("List is empty");}
+        if (isEmpty()) {
+            System.out.println("List is empty");
+        }
 
-        while(current!=null){
+        while (current != null) {
 
-            if (current.email.equals(email)){
+            if (current.email.equals(email)) {
 
-        // case 1: head
-                if (current==head) {
-                    head=current.next;
-                    current.next=null; }
+                // case 1: head
+                if (current == head) {
+                    head = current.next;
+                    current.next = null;
+                }
 
-        // case 2: tail
-            else if(current==tail) {
-                tail=previous;
-                previous.next=null;}
+                // case 2: tail
+                else if (current == tail) {
+                    tail = previous;
+                    previous.next = null;
+                }
 
-        // case 3: middle
-            else{
-                previous.next=current.next;
-                current.next=null;}
+                // case 3: middle
+                else {
+                    previous.next = current.next;
+                    current.next = null;
+                }
 
-        //After deletion
-            size--;
+                //After deletion
+                size--;
             }
-            previous=current;         //Bu noktadan sonra loop'u tamamalyana kadar pespese gidiyorlar
-            current=current.next;
+            previous = current;         //Bu noktadan sonra loop'u tamamalyana kadar pespese gidiyorlar
+            current = current.next;
         }
     }
 
