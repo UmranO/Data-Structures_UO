@@ -183,7 +183,22 @@ public class PhoneBook {
 
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb=new StringBuilder();
+        Node current=head;
+        while(current!=null){
+            sb.append(current.name+ "\n");
+            current=current.next;
+        }
+        return "PhoneBook{\n"+sb+'}';
+    }
 }
+
+
+
+
+
 
 
 
