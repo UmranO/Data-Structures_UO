@@ -208,5 +208,20 @@ public class PhoneBook {
         }
         return "PhoneBook{\n" + sb + '}';
     }
+
+
+//----DeleteDuplicatedEntry Method--------------------------------------------------------------------------------------
+    void removeDuplicatesFromPhonebook() {
+        Node current = head;
+        while (current != null) {
+            Node nextDistinctNode = current.next;
+            while (nextDistinctNode != null && nextDistinctNode.email == current.email){
+                nextDistinctNode = nextDistinctNode.next;
+            }
+            current.next = nextDistinctNode;
+            current = nextDistinctNode;
+        }
+
+    }
+
 }
-//------------------------------------------------------------------------------------------------------------------
