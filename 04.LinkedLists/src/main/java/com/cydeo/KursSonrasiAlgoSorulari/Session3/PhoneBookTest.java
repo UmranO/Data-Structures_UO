@@ -4,11 +4,10 @@ package com.cydeo.KursSonrasiAlgoSorulari.Session3;
 public class PhoneBookTest {
     public static void main (String[] args) {
         PhoneBook mylist = new PhoneBook();
-
         PhoneBook liste = new PhoneBook();
+        PhoneBook duplicatesList=new PhoneBook();
 
         System.out.println("---- Test insert ()-------------------------------------------------------------------------");
-
 
         mylist.insert("Cn", "Oan", "b@yahoo.com-0", "678");
         mylist.insert("Eal", "m", "cgmail.com-1", "100");
@@ -22,6 +21,11 @@ public class PhoneBookTest {
         liste.insert("c", "l", "index of c", "153");         //index of c 1
         liste.insert("b", "l", "index of b", "153");         //index of b 2
         liste.insert("t", "l", "index of t", "245");         //index of t 3
+
+        duplicatesList.insert("Beril","B","BB@","12");
+        duplicatesList.insert("Canan","C","CC@","13");
+        duplicatesList.insert("Kean","K","KK@","14");
+        duplicatesList.insert("Kean","K","KK@","14");
 
         System.out.println("---- Test size ()-------------------------------------------------------------------------");
 
@@ -101,6 +105,10 @@ public class PhoneBookTest {
 
 
 
-        System.out.println("----Test DeleteDuplicates ()-------------------------------------------------------------");
+        System.out.println("----Test RemoveDuplicatesFromPhoneBook ()------------------------------------------------");
+        System.out.println(duplicatesList);
+        duplicatesList.removeDuplicatesFromPhonebook();
+        System.out.println(duplicatesList);
+
     }
 }
