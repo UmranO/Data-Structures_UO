@@ -1,4 +1,4 @@
-package KursSonrasiAlgoSorulari.Session3;
+package com.cydeo.KursSonrasiAlgoSorulari.Session3;
 
 public class Node {
     Node next;
